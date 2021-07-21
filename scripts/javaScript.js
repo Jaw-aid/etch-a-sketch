@@ -1,27 +1,26 @@
 const etchArea = document.querySelector('.etchArea')
-let numberOfAuto = ''
+const square = document.querySelector('.square')
+const squares = document.getElementsByClassName('square');
+const changeSizeTextBox = document.querySelector('.changeSizeTextBox')
+const changeSizeBtn = document.querySelector('.changeSizeBtn')
 
-// TODO Implement repeat on grid template 
+
 // TODO Implement hovering to change colors
-// TODO Create text box and button 
-// TODO Make textbox and button work to change grid size
+// TODO Make a clear button
 // TODO Add in CSS changes to make website look nice 
 // TODO Add in types of etch colors
+
+window.onload = createGrid(16)
 
 function createSquare(x) {
     let square = document.createElement('div')
     square.classList.add(`square`);
-    // square.textContent = `${x}`
     etchArea.appendChild(square);
 }
 
 function createGrid(sizeOfGrid) {
     // Update gridTemplateColumns
-    for (let i = 0; i < sizeOfGrid; i++) {
-        numberOfAuto += ('auto' + ' ')
-    }
-    console.log(numberOfAuto)
-    etchArea.style.gridTemplateColumns = numberOfAuto
+    etchArea.style.gridTemplateColumns = `repeat(${sizeOfGrid}, 1fr)`;
     // Creates rows
     for (let i = 0; i < sizeOfGrid; i++) {
         // Creates columns
@@ -30,3 +29,23 @@ function createGrid(sizeOfGrid) {
         } 
     }
 }
+
+function clearGrid() {
+    while (squares.length > 0) {
+        squares[0].parentNode.removeChild(squares[0]);
+    }
+}
+
+changeSizeBtn.addEventListener('click', () => {
+    let sizeInput = changeSizeTextBox.value;
+    if (isNaN(sizeInput)) {
+        changeSizeTextBox.value = ''
+        return alert('Enter a number'); 
+    }
+    if (sizeInput < 1 || sizeInput > 64) {
+        changeSizeTextBox.value = ''
+        return alert('Enter a number between 1 - 64'); 
+    }
+    clearGrid()
+    createGrid(sizeInput)
+})
