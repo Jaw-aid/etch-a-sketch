@@ -1,7 +1,12 @@
+body {
+    text-align: center;
+}
+    
 .etchArea {
-    display: inline-grid;
-    max-height: 50px;
-    max-width: 50px;
+    display: grid;
+    min-height: 500px;
+    min-width: 500px;
+    position: absolute;
 }
 
 .square {
@@ -10,4 +15,12 @@
     padding: .4em .4em;
     font-size: 30px;
     text-align: center;
+}
+
+.inputArea {
+    display: grid;
+}
+
+textarea::placeholder {
+    color: rgb(156, 156, 156);  
 }
