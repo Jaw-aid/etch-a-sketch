@@ -1,9 +1,3 @@
-body {
-    align-items: center;
-    justify-items: center;
-    position: relative;
-}
-
 .title {
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     font-size: 3em;
@@ -16,10 +10,7 @@ body {
     border: 3px solid rgba(0, 0, 0, 0.8);
     height: 500px;
     width: 500px;
-    /* padding: 10px; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* justify-items: center; */
+    justify-content: center;
 }
 
 .square {

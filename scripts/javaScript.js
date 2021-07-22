@@ -13,9 +13,9 @@ const changeSizeBtn = document.querySelector('.changeSizeBtn')
 window.onload = createGrid(16)
 
 function createSquare(x) {
-    let square = document.createElement('div')
-    square.classList.add(`square`);
-    etchArea.appendChild(square);
+    let squareDIV = document.createElement('div')
+    squareDIV.classList.add(`square`);
+    etchArea.appendChild(squareDIV);
 }
 
 function createGrid(sizeOfGrid) {
@@ -49,3 +49,7 @@ changeSizeBtn.addEventListener('click', () => {
     clearGrid()
     createGrid(sizeInput)
 })
+
+function colorBlackAndWhite() {
+    square.style.backgroundColor = rgba(0, 0, 0, 0.8);
+}
