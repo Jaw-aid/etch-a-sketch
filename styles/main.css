@@ -39,3 +39,7 @@ textarea::placeholder {
 .changeSizeBtn {
     width: 250px;
 }
+
+.grey-color {
+    background-color: gray;
+}

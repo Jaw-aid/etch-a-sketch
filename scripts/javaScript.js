@@ -1,11 +1,10 @@
-const etchArea = document.querySelector('.etchArea')
-const square = document.querySelector('.square')
+const etchArea = document.querySelector('.etchArea');
+const square = document.querySelector('.square');
 const squares = document.getElementsByClassName('square');
-const changeSizeTextBox = document.querySelector('.changeSizeTextBox')
-const changeSizeBtn = document.querySelector('.changeSizeBtn')
+const changeSizeTextBox = document.querySelector('.changeSizeTextBox');
+const changeSizeBtn = document.querySelector('.changeSizeBtn');
 
 
-// TODO Implement hovering to change colors
 // TODO Make a clear button
 // TODO Add in CSS changes to make website look nice 
 // TODO Add in types of etch colors
@@ -13,8 +12,9 @@ const changeSizeBtn = document.querySelector('.changeSizeBtn')
 window.onload = createGrid(16)
 
 function createSquare(x) {
-    let squareDIV = document.createElement('div')
+    let squareDIV = document.createElement('div');
     squareDIV.classList.add(`square`);
+    squareDIV.addEventListener('mouseover', e => e.target.classList.add('grey-color'));
     etchArea.appendChild(squareDIV);
 }
 
@@ -46,10 +46,6 @@ changeSizeBtn.addEventListener('click', () => {
         changeSizeTextBox.value = ''
         return alert('Enter a number between 1 - 64'); 
     }
-    clearGrid()
-    createGrid(sizeInput)
+    clearGrid();
+    createGrid(sizeInput);
 })
-
-function colorBlackAndWhite() {
-    square.style.backgroundColor = rgba(0, 0, 0, 0.8);
-}
