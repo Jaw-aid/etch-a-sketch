@@ -3,10 +3,9 @@ const square = document.querySelector('.square');
 const squares = document.getElementsByClassName('square');
 const changeSizeTextBox = document.querySelector('.changeSizeTextBox');
 const changeSizeBtn = document.querySelector('.changeSizeBtn');
+const resetBtn = document.querySelector('.resetBtn');
 
 
-// TODO Make a clear button
-// TODO Add in CSS changes to make website look nice 
 // TODO Add in types of etch colors
 
 window.onload = createGrid(16)
@@ -48,4 +47,10 @@ changeSizeBtn.addEventListener('click', () => {
     }
     clearGrid();
     createGrid(sizeInput);
+})
+
+resetBtn.addEventListener('click', () => {
+    clearGrid() 
+    changeSizeTextBox.value = ''
+    createGrid(16)
 })
