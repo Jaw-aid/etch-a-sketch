@@ -10,7 +10,7 @@
     border: 3px solid rgba(0, 0, 0, 0.8);
     height: 500px;
     width: 500px;
-    justify-content: center;
+    margin: auto;
 }
 
 .square {
@@ -30,6 +30,8 @@
     margin-top: 1em;
     width: 500px;
     align-items: center;
+    margin: auto;
+    padding-top: 1em;
 }
 
 textarea::placeholder {
