@@ -4,11 +4,12 @@ const squares = document.getElementsByClassName('square');
 const changeSizeTextBox = document.querySelector('.changeSizeTextBox');
 const changeSizeBtn = document.querySelector('.changeSizeBtn');
 const resetBtn = document.querySelector('.resetBtn');
+const defaultSize = 50
 
 
 // TODO Add in types of etch colors
 
-window.onload = createGrid(16)
+window.onload = createGrid(defaultSize)
 
 function createSquare(x) {
     let squareDIV = document.createElement('div');
@@ -52,5 +53,5 @@ changeSizeBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     clearGrid() 
     changeSizeTextBox.value = ''
-    createGrid(16)
+    createGrid(defaultSize)
 })
